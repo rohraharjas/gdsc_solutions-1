@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "271373638473",
+    "project_id": "blooddonation-app-cdcfc",
+    "storage_bucket": "blooddonation-app-cdcfc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271373638473:android:aea5989840b47e8829d898",
+        "android_client_info": {
+          "package_name": "com.example.gdsc_solutions"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGjq4YIzSs5WmazXeqO79e3lJdkLNu-T0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
