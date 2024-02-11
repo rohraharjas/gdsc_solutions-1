@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gdsc_solutions/Screens/templates.dart';
 
 
 class SignInPage2 extends StatelessWidget {
@@ -152,27 +153,28 @@ class __FormContentState extends State<_FormContent> {
               contentPadding: const EdgeInsets.all(0),
             ),
             _gap(),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4)),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Text(
-                    'Sign in',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                onPressed: () {
-                  if (_formKey.currentState?.validate() ?? false) {
-                    /// do something
-                  }
-                },
-              ),
-            ),
+            // SizedBox(
+            //   width: double.infinity,
+            //   child: ElevatedButton(
+            //     style: ElevatedButton.styleFrom(
+            //       shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(4)),
+            //     ),
+            //     child: const Padding(
+            //       padding: EdgeInsets.all(10.0),
+            //       child: Text(
+            //         'Sign in',
+            //         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            //       ),
+            //     ),
+            //     onPressed: () {
+            //       if (_formKey.currentState?.validate() ?? false) {
+            //         /// do something
+            //       }
+            //     },
+            //   ),
+            // ),
+            AppTextButton(text: "Sign In", height: 100.0, width: double.infinity, onpressed: () {},),
           ],
         ),
       ),
