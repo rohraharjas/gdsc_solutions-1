@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:gdsc_solutions/Screens/authenticate/authenticate.dart';
+import 'package:gdsc_solutions/Screens/home.dart';
 // import 'package:gdsc_solutions/Screens/wrapper.dart';
 // import 'firebase_options.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SignInPage2(),
+      home: Home(),
     );
   }
 }
