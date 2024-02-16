@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdsc_solutions/Screens/Donor/home_don.dart';
+import 'package:gdsc_solutions/Screens/home.dart';
 
 
 class Wrapper extends StatelessWidget {
@@ -8,6 +8,6 @@ class Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Return according to auth status
-    return UserHome();
+    return Home();
   }
 }
