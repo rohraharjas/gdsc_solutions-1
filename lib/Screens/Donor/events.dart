@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gdsc_solutions/Screens/home.dart';
 import 'package:gdsc_solutions/Screens/templates.dart';
+import 'package:gdsc_solutions/main.dart';
 
 class EventsPages extends StatelessWidget {
   const EventsPages({super.key});

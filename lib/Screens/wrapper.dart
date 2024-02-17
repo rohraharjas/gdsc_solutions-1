@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gdsc_solutions/Screens/home.dart';
+import 'package:gdsc_solutions/main.dart';
 
 
 class Wrapper extends StatelessWidget {
@@ -8,6 +9,6 @@ class Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Return according to auth status
-    return Home();
+    return Home(currentIndex: 2,);
   }
 }
