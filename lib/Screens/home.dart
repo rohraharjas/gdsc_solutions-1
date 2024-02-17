@@ -9,10 +9,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List<UserRequest> display = [
+    UserRequest(name: 'Name 1', location: 'Loc 1', bld_type: 'O+ve', contact: '9876543210'),
+    UserRequest(name: 'Name 2', location: 'Loc 2', bld_type: 'A+ve', contact: '9876543211'),
+    UserRequest(name: 'Name 3', location: 'Loc 3', bld_type: 'B+ve', contact: '9876543212'),
+    UserRequest(name: 'Name 4', location: 'Loc 4', bld_type: 'AB+ve', contact: '9876543213')
+  ];
   int currentIndex = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.white,
+        child: Icon(
+          Icons.create,
+          color: Colors.red[800],
+        ),
+      ),
       appBar: MyAppBar(),
       drawer:  const AppDrawer(),
       body:  SingleChildScrollView(
@@ -104,6 +118,28 @@ class _HomeState extends State<Home> {
              ),
             Divider(
               color: Colors.grey[800],
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: display.length,
+              itemBuilder: (context, index)=>Padding(
+                  padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  onTap: () {},
+                  shape: RoundedRectangleBorder(
+                    side: const BorderSide(color: Colors.black, width: 1),
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+                  title: Text(
+                    'Required ${display[index].bld_type} Blood Urgently',
+                    style: TextStyle(
+                      color: Colors.red[800],
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ),
+              ),
             )
           ],
         ),
@@ -143,6 +179,12 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+}
+
+class UserRequest{
+  String name, location, bld_type, contact;
+
+  UserRequest({required this.name, required this.location, required this.bld_type, required this.contact});
 }
 
 
