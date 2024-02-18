@@ -222,7 +222,7 @@ class __FormContentState extends State<_FormContent> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ForgotPasswordPage(),
+                        builder: (context) => const ForgotPasswordPage(),
                       ),
                     );
                   },
