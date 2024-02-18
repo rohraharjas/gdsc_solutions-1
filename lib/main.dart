@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gdsc_solutions/Screens/Health1.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:gdsc_solutions/Screens/home.dart';
+import 'package:gdsc_solutions/Screens/faq.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'firebase_options.dart';
 
@@ -36,8 +38,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final screens = [
-    const Scaffold(body: Center( child: Text('FAQs', style: TextStyle(fontSize: 60)))),
-    const Center( child: Text('Medical Assistance', style: TextStyle(fontSize: 60))),
+    Faq(),
+    Health(),
     const HomeWidget(),
     const Center( child: Text('Events', style: TextStyle(fontSize: 60))),
     const Center( child: Text('Profile', style: TextStyle(fontSize: 60)))

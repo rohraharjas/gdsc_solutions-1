@@ -25,25 +25,20 @@ class _AppTextButtonState extends State<AppTextButton> {
       minWidth: widget.width,
       height: widget.height,
       child: OutlinedButton(
-          onPressed: widget.onpressed,
-          child: Text(
-              widget.text,
+        onPressed: widget.onpressed,
+        child: Text(
+            widget.text,
             style: GoogleFonts.openSans(
               textStyle: const TextStyle(
                 color: Colors.red,
                 fontWeight: FontWeight.bold,
               ),
             )
-          ),
-          style: OutlinedButton.styleFrom(
+        ),
+        style: OutlinedButton.styleFrom(
             side: BorderSide(color: Colors.red)
-          ),
+        ),
       ),
     );
   }
 }
-
-
-
-
-
