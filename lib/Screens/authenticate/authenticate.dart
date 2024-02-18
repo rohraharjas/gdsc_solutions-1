@@ -79,6 +79,8 @@ class _FormContent extends StatefulWidget {
 class __FormContentState extends State<_FormContent> {
   bool _isPasswordVisible = false;
   bool _rememberMe = false;
+  bool _isFirstCardRed = false;
+  bool _isSecondCardRed = false;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -94,19 +96,7 @@ class __FormContentState extends State<_FormContent> {
           children: [
             TextFormField(
               validator: (value) {
-                // add email validation
-                if (value == null || value.isEmpty) {
-                  return 'Please enter some text';
-                }
-
-                bool emailValid = RegExp(
-                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                    .hasMatch(value);
-                if (!emailValid) {
-                  return 'Please enter a valid email';
-                }
-
-                return null;
+                // Validation logic
               },
               decoration: const InputDecoration(
                 labelText: 'Email',
@@ -118,31 +108,70 @@ class __FormContentState extends State<_FormContent> {
             _gap(),
             TextFormField(
               validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter some text';
-                }
-
-                if (value.length < 6) {
-                  return 'Password must be at least 6 characters';
-                }
-                return null;
+                // Validation logic
               },
               obscureText: !_isPasswordVisible,
               decoration: InputDecoration(
-                  labelText: 'Password',
-                  hintText: 'Enter your password',
-                  prefixIcon: const Icon(Icons.lock_outline_rounded),
-                  border: const OutlineInputBorder(),
-                  suffixIcon: IconButton(
-                    icon: Icon(_isPasswordVisible
-                        ? Icons.visibility_off
-                        : Icons.visibility),
-                    onPressed: () {
+                labelText: 'Password',
+                hintText: 'Enter your password',
+                prefixIcon: const Icon(Icons.lock_outline_rounded),
+                border: const OutlineInputBorder(),
+                suffixIcon: IconButton(
+                  icon: Icon(_isPasswordVisible
+                      ? Icons.visibility_off
+                      : Icons.visibility),
+                  onPressed: () {
+                    setState(() {
+                      _isPasswordVisible = !_isPasswordVisible;
+                    });
+                  },
+                ),
+              ),
+            ),
+            _gap(),
+            const Text(
+              "I am a: ",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            _gap(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Flexible(
+                  child: GestureDetector(
+                    onTap: () {
                       setState(() {
-                        _isPasswordVisible = !_isPasswordVisible;
+                        _isFirstCardRed = true;
+                        _isSecondCardRed = false;
                       });
                     },
-                  )),
+                    child: Card(
+                      color:
+                          _isFirstCardRed ? Colors.red.shade500 : Colors.white,
+                      child: const ListTile(
+                        title: Text('Donor'),
+                      ),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _isFirstCardRed = false;
+                        _isSecondCardRed = true;
+                      });
+                    },
+                    child: Card(
+                      color:
+                          _isSecondCardRed ? Colors.red.shade500 : Colors.white,
+                      child: const ListTile(
+                        title: Text('Organisation'),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
             _gap(),
             Row(
@@ -151,10 +180,11 @@ class __FormContentState extends State<_FormContent> {
                   child: CheckboxListTile(
                     value: _rememberMe,
                     onChanged: (value) {
-                      if (value == null) return;
-                      setState(() {
-                        _rememberMe = value;
-                      });
+                      if (value != null) {
+                        setState(() {
+                          _rememberMe = value;
+                        });
+                      }
                     },
                     title: const Text('Remember me'),
                     controlAffinity: ListTileControlAffinity.leading,
@@ -180,7 +210,7 @@ class __FormContentState extends State<_FormContent> {
             ),
             _gap(),
             AppTextButton(
-              text: "Sign In",
+              text: "Submit",
               height: 100.0,
               width: double.infinity,
               onpressed: () {},
