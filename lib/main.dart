@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gdsc_solutions/Screens/Donor/events.dart';
 import 'package:gdsc_solutions/Screens/Health1.dart';
+import 'package:gdsc_solutions/Screens/authenticate/authenticate.dart';
 import 'package:gdsc_solutions/Screens/faq.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:gdsc_solutions/Screens/home.dart';
@@ -50,7 +51,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar: MyAppBar(context: context),
       drawer: const AppDrawer(),
       body: screens[widget.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -103,7 +104,7 @@ class _HomeState extends State<Home> {
 }
 
 class MyAppBar extends AppBar {
-  MyAppBar({super.key})
+  MyAppBar({Key? key, required BuildContext context})
       : super(
           iconTheme: const IconThemeData(color: Colors.white),
           backgroundColor: Colors.red[800],
@@ -118,11 +119,19 @@ class MyAppBar extends AppBar {
           ),
           actions: <Widget>[
             IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.logout_outlined,
-                  color: Colors.white,
-                ))
+              onPressed: () {
+                Navigator.push(
+                  context as BuildContext,
+                  MaterialPageRoute(
+                    builder: (context) => const SignInPage2(),
+                  ),
+                );
+              },
+              icon: const Icon(
+                Icons.logout_outlined,
+                color: Colors.white,
+              ),
+            )
           ],
         );
 }

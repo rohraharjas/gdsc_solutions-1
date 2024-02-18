@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gdsc_solutions/Screens/authenticate/forgotpassword.dart';
 import 'package:gdsc_solutions/Screens/templates.dart';
 import 'package:gdsc_solutions/main.dart';
-import '../wrapper.dart';
 
 class SignInPage2 extends StatelessWidget {
   const SignInPage2({Key? key}) : super(key: key);
@@ -46,27 +45,30 @@ class _Logo extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isSmallScreen = MediaQuery.of(context).size.width < 600;
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Image.asset(
-          'assets/images/logo.png',
-          width: isSmallScreen ? 100 : 200,
-        ),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Text(
-            "Welcome to BloodBridge!",
-            textAlign: TextAlign.center,
-            style: isSmallScreen
-                ? Theme.of(context).textTheme.headlineSmall
-                : Theme.of(context)
-                    .textTheme
-                    .headlineMedium
-                    ?.copyWith(color: Colors.black),
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 20),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            'assets/images/logo.png',
+            width: isSmallScreen ? 100 : 200,
           ),
-        )
-      ],
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Welcome to BloodBridge!",
+              textAlign: TextAlign.center,
+              style: isSmallScreen
+                  ? Theme.of(context).textTheme.headlineSmall
+                  : Theme.of(context)
+                      .textTheme
+                      .headlineMedium
+                      ?.copyWith(color: Colors.black),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
