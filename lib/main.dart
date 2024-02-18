@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gdsc_solutions/Screens/Donor/events.dart';
 import 'package:gdsc_solutions/Screens/Health1.dart';
+import 'package:gdsc_solutions/Screens/authenticate/authenticate.dart';
+import 'package:gdsc_solutions/Screens/authenticate/signin.dart';
 import 'package:gdsc_solutions/Screens/faq.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:gdsc_solutions/Screens/home.dart';
 import 'package:google_fonts/google_fonts.dart';
+// import 'package:gdsc_solutions/Screens/authenticate/signin.dart';
 // import 'firebase_options.dart';
 
 void main() {
@@ -24,7 +27,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Home(
-        currentIndex: 2,
+        currentIndex: 0,
       ),
       debugShowCheckedModeBanner: false,
     );
@@ -41,6 +44,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final screens = [
+    SignInPage2(),
+    SignInPage(),
     Faq(),
     Health(),
     const HomeWidget(),

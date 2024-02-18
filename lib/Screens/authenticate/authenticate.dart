@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gdsc_solutions/Screens/templates.dart';
+import '';
 
 class SignInPage2 extends StatelessWidget {
   const SignInPage2({Key? key}) : super(key: key);
@@ -43,11 +44,14 @@ class _Logo extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        FlutterLogo(size: isSmallScreen ? 100 : 200),
+        Image.asset(
+          'assets/images/logo.png',
+          width: isSmallScreen ? 100 : 200,
+        ),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Text(
-            "Welcome to Flutter!",
+            "Welcome to BloodBridge!",
             textAlign: TextAlign.center,
             style: isSmallScreen
                 ? Theme.of(context).textTheme.headlineSmall
@@ -151,28 +155,11 @@ class __FormContentState extends State<_FormContent> {
               dense: true,
               contentPadding: const EdgeInsets.all(0),
             ),
+            Text(
+              "Forgot Password",
+              style: TextStyle(color: Colors.blueAccent),
+            ),
             _gap(),
-            // SizedBox(
-            //   width: double.infinity,
-            //   child: ElevatedButton(
-            //     style: ElevatedButton.styleFrom(
-            //       shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(4)),
-            //     ),
-            //     child: const Padding(
-            //       padding: EdgeInsets.all(10.0),
-            //       child: Text(
-            //         'Sign in',
-            //         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            //       ),
-            //     ),
-            //     onPressed: () {
-            //       if (_formKey.currentState?.validate() ?? false) {
-            //         /// do something
-            //       }
-            //     },
-            //   ),
-            // ),
             AppTextButton(
               text: "Sign In",
               height: 100.0,
