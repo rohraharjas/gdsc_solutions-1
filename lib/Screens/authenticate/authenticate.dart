@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gdsc_solutions/Screens/authenticate/forgotpassword.dart';
 import 'package:gdsc_solutions/Screens/templates.dart';
-import '';
 
 class SignInPage2 extends StatelessWidget {
   const SignInPage2({Key? key}) : super(key: key);
@@ -10,27 +10,30 @@ class SignInPage2 extends StatelessWidget {
     final bool isSmallScreen = MediaQuery.of(context).size.width < 600;
 
     return Scaffold(
-        body: Center(
-            child: isSmallScreen
-                ? Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: const [
-                      _Logo(),
-                      _FormContent(),
-                    ],
-                  )
-                : Container(
-                    padding: const EdgeInsets.all(32.0),
-                    constraints: const BoxConstraints(maxWidth: 800),
-                    child: Row(
-                      children: const [
-                        Expanded(child: _Logo()),
-                        Expanded(
-                          child: Center(child: _FormContent()),
-                        ),
+        resizeToAvoidBottomInset: true,
+        body: SingleChildScrollView(
+          child: Center(
+              child: isSmallScreen
+                  ? const Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        _Logo(),
+                        _FormContent(),
                       ],
-                    ),
-                  )));
+                    )
+                  : Container(
+                      padding: const EdgeInsets.all(32.0),
+                      constraints: const BoxConstraints(maxWidth: 800),
+                      child: const Row(
+                        children: [
+                          Expanded(child: _Logo()),
+                          Expanded(
+                            child: Center(child: _FormContent()),
+                          ),
+                        ],
+                      ),
+                    )),
+        ));
   }
 }
 
@@ -142,22 +145,38 @@ class __FormContentState extends State<_FormContent> {
                   )),
             ),
             _gap(),
-            CheckboxListTile(
-              value: _rememberMe,
-              onChanged: (value) {
-                if (value == null) return;
-                setState(() {
-                  _rememberMe = value;
-                });
-              },
-              title: const Text('Remember me'),
-              controlAffinity: ListTileControlAffinity.leading,
-              dense: true,
-              contentPadding: const EdgeInsets.all(0),
-            ),
-            Text(
-              "Forgot Password",
-              style: TextStyle(color: Colors.blueAccent),
+            Row(
+              children: <Widget>[
+                Flexible(
+                  child: CheckboxListTile(
+                    value: _rememberMe,
+                    onChanged: (value) {
+                      if (value == null) return;
+                      setState(() {
+                        _rememberMe = value;
+                      });
+                    },
+                    title: const Text('Remember me'),
+                    controlAffinity: ListTileControlAffinity.leading,
+                    dense: true,
+                    contentPadding: const EdgeInsets.all(0),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ForgotPasswordPage(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "Forgot Password",
+                    style: TextStyle(color: Colors.blueAccent),
+                  ),
+                ),
+              ],
             ),
             _gap(),
             AppTextButton(

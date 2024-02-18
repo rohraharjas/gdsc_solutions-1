@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gdsc_solutions/Screens/home.dart';
 import 'package:gdsc_solutions/main.dart';
 
 class Wrapper extends StatelessWidget {

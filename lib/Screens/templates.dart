@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gdsc_solutions/Screens/home.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextButton extends StatefulWidget {
@@ -12,7 +11,9 @@ class AppTextButton extends StatefulWidget {
     required this.height,
     required this.width,
     required this.onpressed,
-  }):super(key: key,);
+  }) : super(
+          key: key,
+        );
 
   @override
   State<AppTextButton> createState() => _AppTextButtonState();
@@ -26,18 +27,14 @@ class _AppTextButtonState extends State<AppTextButton> {
       height: widget.height,
       child: OutlinedButton(
         onPressed: widget.onpressed,
-        child: Text(
-            widget.text,
+        child: Text(widget.text,
             style: GoogleFonts.openSans(
               textStyle: const TextStyle(
                 color: Colors.red,
                 fontWeight: FontWeight.bold,
               ),
-            )
-        ),
-        style: OutlinedButton.styleFrom(
-            side: BorderSide(color: Colors.red)
-        ),
+            )),
+        style: OutlinedButton.styleFrom(side: BorderSide(color: Colors.red)),
       ),
     );
   }
