@@ -5,6 +5,7 @@ import 'package:gdsc_solutions/Screens/authenticate/authenticate.dart';
 import 'package:gdsc_solutions/Screens/faq.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:gdsc_solutions/Screens/home.dart';
+import 'package:gdsc_solutions/Screens/wrapper.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:gdsc_solutions/Screens/authenticate/signin.dart';
 // import 'firebase_options.dart';
@@ -24,10 +25,8 @@ class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Home(
-        currentIndex: 0,
-      ),
+    return const MaterialApp(
+      home: Wrapper(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -43,7 +42,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final screens = [
-    SignInPage2(),
     Faq(),
     Health(),
     const HomeWidget(),

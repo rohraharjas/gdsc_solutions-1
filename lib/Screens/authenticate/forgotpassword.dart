@@ -25,9 +25,9 @@ class ForgotPasswordPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 20),
+              _gap(),
               PhoneNumberField(),
-              const SizedBox(height: 20),
+              _gap(),
               OTPField(),
               const SizedBox(height: 40),
               AppTextButton(
@@ -42,6 +42,8 @@ class ForgotPasswordPage extends StatelessWidget {
       ),
     );
   }
+
+  Widget _gap() => const SizedBox(height: 20);
 }
 
 class PhoneNumberField extends StatelessWidget {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gdsc_solutions/Screens/authenticate/forgotpassword.dart';
 import 'package:gdsc_solutions/Screens/templates.dart';
+import 'package:gdsc_solutions/main.dart';
+import '../wrapper.dart';
 
 class SignInPage2 extends StatelessWidget {
   const SignInPage2({Key? key}) : super(key: key);
@@ -96,7 +98,17 @@ class __FormContentState extends State<_FormContent> {
           children: [
             TextFormField(
               validator: (value) {
-                // Validation logic
+                // add email validation
+                if (value == null || value.isEmpty) {
+                  return 'Please enter some text';
+                }
+                bool emailValid = RegExp(
+                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                    .hasMatch(value);
+                if (!emailValid) {
+                  return 'Please enter a valid email';
+                }
+                return null;
               },
               decoration: const InputDecoration(
                 labelText: 'Email',
@@ -108,7 +120,14 @@ class __FormContentState extends State<_FormContent> {
             _gap(),
             TextFormField(
               validator: (value) {
-                // Validation logic
+                if (value == null || value.isEmpty) {
+                  return 'Please enter some text';
+                }
+
+                if (value.length < 6) {
+                  return 'Password must be at least 6 characters';
+                }
+                return null;
               },
               obscureText: !_isPasswordVisible,
               decoration: InputDecoration(
@@ -121,9 +140,11 @@ class __FormContentState extends State<_FormContent> {
                       ? Icons.visibility_off
                       : Icons.visibility),
                   onPressed: () {
-                    setState(() {
-                      _isPasswordVisible = !_isPasswordVisible;
-                    });
+                    setState(
+                      () {
+                        _isPasswordVisible = !_isPasswordVisible;
+                      },
+                    );
                   },
                 ),
               ),
@@ -181,9 +202,11 @@ class __FormContentState extends State<_FormContent> {
                     value: _rememberMe,
                     onChanged: (value) {
                       if (value != null) {
-                        setState(() {
-                          _rememberMe = value;
-                        });
+                        setState(
+                          () {
+                            _rememberMe = value;
+                          },
+                        );
                       }
                     },
                     title: const Text('Remember me'),
@@ -213,7 +236,14 @@ class __FormContentState extends State<_FormContent> {
               text: "Submit",
               height: 100.0,
               width: double.infinity,
-              onpressed: () {},
+              onpressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Home(currentIndex: 2),
+                  ),
+                );
+              },
             ),
           ],
         ),
