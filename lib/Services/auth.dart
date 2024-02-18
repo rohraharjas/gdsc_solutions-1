@@ -1,18 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
-class AuthService{
+class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   //sign in Anon
-  Future signInAnon() async{
-      UserCredential result = await _auth.signInAnonymously();
-      User? user = result.user;
-      return user;
+  Future signInAnon() async {
+    UserCredential result = await _auth.signInAnonymously();
+    User? user = result.user;
+    return user;
   }
-
 }
 
-class AppUser{
+class AppUser {
   String name, email_id, username, password, location;
 
   AppUser({
@@ -22,10 +21,9 @@ class AppUser{
     required this.password,
     required this.location,
   });
-
 }
 
-class Donor extends AppUser{
+class Donor extends AppUser {
   int age, weight;
   String blood_type, gender, last_donation_date;
 
@@ -40,16 +38,15 @@ class Donor extends AppUser{
     required this.blood_type,
     required this.gender,
     required this.last_donation_date,
-}) : super(
-    name: name,
-    email_id: email_id,
-    password: password,
-    username: 'don$username',
-    location: location
-  );
+  }) : super(
+            name: name,
+            email_id: email_id,
+            password: password,
+            username: 'don$username',
+            location: location);
 }
 
-class Representative extends AppUser{
+class Representative extends AppUser {
   int rating;
   String about;
   Representative({
@@ -60,11 +57,10 @@ class Representative extends AppUser{
     required String location,
     required this.about,
     this.rating = 0,
-}):super(
-      name: name,
-      email_id: email_id,
-      username: 'rep$username',
-      password: password,
-      location: location
-  );
+  }) : super(
+            name: name,
+            email_id: email_id,
+            username: 'rep$username',
+            password: password,
+            location: location);
 }
