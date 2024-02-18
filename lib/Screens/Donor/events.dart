@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:gdsc_solutions/main.dart';
 
@@ -100,6 +99,11 @@ class _LocationState extends State<Location> {
                 decorationColor: Colors.red[800]),
           ),
         ),
+        // const GoogleMap(
+        //   initialCameraPosition: CameraPosition(
+        //     target: LatLng(0,0)
+        //   ),
+        // )
       ],
     );
   }
