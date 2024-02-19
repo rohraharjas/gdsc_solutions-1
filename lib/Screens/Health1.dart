@@ -5,18 +5,30 @@ class Health extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const DefaultTabController(
+    return DefaultTabController(
       length: 2,
       child: Scaffold(
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TabBar(
-              tabs: [
+              indicatorColor: Colors.red.shade800,
+              labelStyle: TextStyle(
+                color: Colors.red.shade800,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+              unselectedLabelStyle: const TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+              tabs: const [
                 Tab(text: 'Did you know?'),
                 Tab(text: 'Doctors & Dieticians'),
               ],
             ),
-            Expanded(
+            const Expanded(
               child: TabBarView(
                 children: <Widget>[
                   DidYouKnowSection(),
@@ -36,27 +48,70 @@ class DidYouKnowSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.all(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'SwifTip for the day:',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+            //const SizedBox(height: 12,),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+                'SwifTip for the Day',
+                style: TextStyle(
+                  color: Colors.red.shade800,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  //decoration: TextDecoration.underline,
+                  //decorationColor: Colors.red[800]
+                ),
               ),
             ),
-            SizedBox(height: 10),
-            Text(
-              'Just 1 donation can save up to 3 lives!',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.black54,
-                fontSize: 18,
+            const Padding(
+              padding: EdgeInsets.all(5.0),
+              child: Text(
+                'Did you know that people who donate blood are 88% less likely to suffer a heart attack and 33% less likely to acquire any type of cardiovascular disease.',
+                style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+
+                  //decoration: TextDecoration.underline,
+                  //decorationColor: Colors.red[800]
+                ),
+              ),
+
+            ),
+
+            Padding( //articles
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+                'Articles worth a read!',
+                style: TextStyle(
+                  color: Colors.red[800],
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  //decoration: TextDecoration.underline,
+                  //decorationColor: Colors.red[800]
+                ),
+              ),
+            ),
+
+            //carousel of articles
+
+
+            Padding( //videos
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+                'Understand through videos!',
+                style: TextStyle(
+                  color: Colors.red[800],
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  //decoration: TextDecoration.underline,
+                  //decorationColor: Colors.red[800]
+                ),
               ),
             ),
           ],
