@@ -6,14 +6,12 @@ class AppTextButton extends StatefulWidget {
   final double height, width;
   final VoidCallback onpressed;
   const AppTextButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.height,
     required this.width,
     required this.onpressed,
-  }) : super(
-          key: key,
-        );
+  });
 
   @override
   State<AppTextButton> createState() => _AppTextButtonState();

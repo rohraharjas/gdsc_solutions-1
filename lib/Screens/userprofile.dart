@@ -5,11 +5,11 @@ class UserProfilePage extends StatelessWidget {
   final String username = "user123";
   final String name = "Ayush Chanekar";
   final double weight = 76.8;
-  final String gender = "Male"; // Change this to "Other" for testing
+  final String gender = "Male"; // "Other" for testing transgender
   final double height = 187.9;
   final int age = 30;
   Widget _gap() => const SizedBox(
-        height: 20,
+        height: 10,
       );
 
   @override
@@ -44,27 +44,27 @@ class UserProfilePage extends StatelessWidget {
               ),
               _gap(),
               buildProfileCard(
-                'Weight (kg)',
-                weight.toString(),
-                Icons.monitor_weight,
-              ),
-              _gap(),
-              buildProfileCard(
                 'Gender',
                 gender,
-                Icons.wc,
-              ),
-              _gap(),
-              buildProfileCard(
-                'Height (cm)',
-                height.toString(),
-                Icons.height,
+                _getGenderIcon(gender),
               ),
               _gap(),
               buildProfileCard(
                 'Age (years)',
                 age.toString(),
                 Icons.cake,
+              ),
+              _gap(),
+              buildProfileCard(
+                'Weight (kg)',
+                weight.toString(),
+                Icons.monitor_weight,
+              ),
+              _gap(),
+              buildProfileCard(
+                'Height (cm)',
+                height.toString(),
+                Icons.height,
               ),
             ],
           ),
@@ -101,5 +101,15 @@ class UserProfilePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  IconData _getGenderIcon(String gender) {
+    if (gender == 'Male') {
+      return Icons.male;
+    } else if (gender == 'Female') {
+      return Icons.female;
+    } else {
+      return Icons.transgender_outlined;
+    }
   }
 }
