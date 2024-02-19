@@ -12,11 +12,11 @@ class AuthService {
 }
 
 class AppUser {
-  String name, email_id, username, password, location;
+  String name, emailId, username, password, location;
 
   AppUser({
     required this.name,
-    required this.email_id,
+    required this.emailId,
     required this.username,
     required this.password,
     required this.location,
@@ -24,23 +24,25 @@ class AppUser {
 }
 
 class Donor extends AppUser {
-  int age, weight;
-  String blood_type, gender, last_donation_date;
+  int age, height;
+  double weight;
+  String bloodType, gender, lastDonationDate;
 
   Donor({
     required String name,
-    required String email_id,
+    required String emailId,
     required String username,
     required String password,
     required String location,
     required this.age,
     required this.weight,
-    required this.blood_type,
+    required this.height,
+    required this.bloodType,
     required this.gender,
-    required this.last_donation_date,
+    required this.lastDonationDate,
   }) : super(
             name: name,
-            email_id: email_id,
+            emailId: emailId,
             password: password,
             username: 'don$username',
             location: location);
@@ -51,7 +53,7 @@ class Representative extends AppUser {
   String about;
   Representative({
     required String name,
-    required String email_id,
+    required String emailId,
     required String username,
     required String password,
     required String location,
@@ -59,7 +61,7 @@ class Representative extends AppUser {
     this.rating = 0,
   }) : super(
             name: name,
-            email_id: email_id,
+            emailId: emailId,
             username: 'rep$username',
             password: password,
             location: location);

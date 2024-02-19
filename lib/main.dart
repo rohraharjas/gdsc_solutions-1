@@ -149,7 +149,7 @@ class AppDrawer extends StatelessWidget {
       Home(currentIndex: 4),
       Home(currentIndex: 0),
       Home(currentIndex: 1),
-      MedRecordsPage()
+      const MedRecordsPage()
     ];
     var titles = [
       'Home',
@@ -186,7 +186,11 @@ class AppDrawer extends StatelessWidget {
                       ),
                       onTap: () {
                         Navigator.pop(context);
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => pages[titles.indexOf(x)]));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    pages[titles.indexOf(x)]));
                       },
                     ))
                 .toList()),

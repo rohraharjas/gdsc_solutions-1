@@ -2,12 +2,23 @@ import 'package:flutter/material.dart';
 
 class UserProfilePage extends StatelessWidget {
   // Dummy user data (replace with actual user data)
-  final String username = "user123";
-  final String name = "Ayush Chanekar";
-  final double weight = 76.8;
-  final String gender = "Male"; // "Other" for testing transgender
-  final double height = 187.9;
-  final int age = 30;
+  final String username;
+  final String name;
+  final double weight;
+  final String gender; // "Other" for testing transgender
+  final int height;
+  final int age;
+
+  const UserProfilePage({
+    super.key,
+    required this.username,
+    required this.name,
+    required this.weight,
+    required this.gender,
+    required this.height,
+    required this.age,
+  });
+
   Widget _gap() => const SizedBox(
         height: 10,
       );
