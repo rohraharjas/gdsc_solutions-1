@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:gdsc_solutions/Screens/Donor/events.dart';
+import 'package:gdsc_solutions/Screens/Donor/profile.dart';
 import 'package:gdsc_solutions/Screens/Health1.dart';
 import 'package:gdsc_solutions/Screens/authenticate/authenticate.dart';
 import 'package:gdsc_solutions/Screens/faq.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:gdsc_solutions/Screens/home.dart';
+import 'package:gdsc_solutions/Screens/update_med_records.dart';
 import 'package:gdsc_solutions/Screens/wrapper.dart';
 import 'package:google_fonts/google_fonts.dart';
-import './Screens/userprofile.dart';
 // import 'package:gdsc_solutions/Screens/authenticate/signin.dart';
 // import 'firebase_options.dart';
 
@@ -43,12 +44,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final screens = [
-    const Faq(),
-    const Health(),
+    Faq(),
+    Health(),
     const HomeWidget(),
     const EventsPages(),
-    // const Center(child: Text('Profile', style: TextStyle(fontSize: 60)))
-    UserProfilePage(),
+    Profile()
   ];
   @override
   Widget build(BuildContext context) {
@@ -143,6 +143,14 @@ class AppDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var pages = [
+      Home(currentIndex: 2),
+      Home(currentIndex: 3),
+      Home(currentIndex: 4),
+      Home(currentIndex: 0),
+      Home(currentIndex: 1),
+      MedRecordsPage()
+    ];
     var titles = [
       'Home',
       'Events',
@@ -178,6 +186,7 @@ class AppDrawer extends StatelessWidget {
                       ),
                       onTap: () {
                         Navigator.pop(context);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => pages[titles.indexOf(x)]));
                       },
                     ))
                 .toList()),

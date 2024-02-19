@@ -101,6 +101,64 @@ class Profile extends StatelessWidget {
             )
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(19, 8, 0, 2),
+            child: RichText(text: TextSpan(
+                text: 'Blood Type: ',
+                style: TextStyle(
+                  color: Colors.redAccent[200],
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: profile_user.age.toString(),
+                    style: const TextStyle(
+                      color: Colors.black,
+                    ),
+                  )
+                ]
+            )
+            ),
+          ),Padding(
+            padding: const EdgeInsets.fromLTRB(19, 8, 0, 2),
+            child: RichText(text: TextSpan(
+                text: 'Age: ',
+                style: TextStyle(
+                  color: Colors.redAccent[200],
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: profile_user.age.toString(),
+                    style: const TextStyle(
+                      color: Colors.black,
+                    ),
+                  )
+                ]
+            )
+            ),
+          ),Padding(
+            padding: const EdgeInsets.fromLTRB(19, 8, 0, 2),
+            child: RichText(text: TextSpan(
+                text: 'Age: ',
+                style: TextStyle(
+                  color: Colors.redAccent[200],
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: profile_user.age.toString(),
+                    style: const TextStyle(
+                      color: Colors.black,
+                    ),
+                  )
+                ]
+            )
+            ),
+          ),
         ],
       ),
     );

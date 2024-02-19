@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class AppTextButton extends StatefulWidget {
   final String text;
   final double height, width;
-  final VoidCallback onpressed;
+  final GestureTapCallback onpressed;
   const AppTextButton({
     super.key,
     required this.text,
@@ -39,3 +39,4 @@ class _AppTextButtonState extends State<AppTextButton> {
     );
   }
 }
+
