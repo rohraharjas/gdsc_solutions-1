@@ -7,6 +7,7 @@ import 'package:gdsc_solutions/Screens/faq.dart';
 import 'package:gdsc_solutions/Screens/home.dart';
 import 'package:gdsc_solutions/Screens/wrapper.dart';
 import 'package:google_fonts/google_fonts.dart';
+import './Screens/userprofile.dart';
 // import 'package:gdsc_solutions/Screens/authenticate/signin.dart';
 // import 'firebase_options.dart';
 
@@ -42,11 +43,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final screens = [
-    Faq(),
-    Health(),
+    const Faq(),
+    const Health(),
     const HomeWidget(),
     const EventsPages(),
-    const Center(child: Text('Profile', style: TextStyle(fontSize: 60)))
+    // const Center(child: Text('Profile', style: TextStyle(fontSize: 60)))
+    UserProfilePage(),
   ];
   @override
   Widget build(BuildContext context) {

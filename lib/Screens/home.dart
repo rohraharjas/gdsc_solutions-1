@@ -9,15 +9,31 @@ class HomeWidget extends StatefulWidget {
 
 class _HomeWidgetState extends State<HomeWidget> {
   List<UserRequest> display = [
-    UserRequest(name: 'Name 1', location: 'Loc 1', bld_type: 'O+ve', contact: '9876543210'),
-    UserRequest(name: 'Name 2', location: 'Loc 2', bld_type: 'A+ve', contact: '9876543211'),
-    UserRequest(name: 'Name 3', location: 'Loc 3', bld_type: 'B+ve', contact: '9876543212'),
-    UserRequest(name: 'Name 4', location: 'Loc 4', bld_type: 'AB+ve', contact: '9876543213')
+    UserRequest(
+        name: 'Name 1',
+        location: 'Loc 1',
+        bld_type: 'O+ve',
+        contact: '9876543210'),
+    UserRequest(
+        name: 'Name 2',
+        location: 'Loc 2',
+        bld_type: 'A+ve',
+        contact: '9876543211'),
+    UserRequest(
+        name: 'Name 3',
+        location: 'Loc 3',
+        bld_type: 'B+ve',
+        contact: '9876543212'),
+    UserRequest(
+        name: 'Name 4',
+        location: 'Loc 4',
+        bld_type: 'AB+ve',
+        contact: '9876543213')
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton:FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.white,
         child: Icon(
@@ -27,7 +43,6 @@ class _HomeWidgetState extends State<HomeWidget> {
       ),
       body: SingleChildScrollView(
         child: Column(
-
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
@@ -43,8 +58,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                         style: TextStyle(
                             color: Colors.red[800],
                             fontSize: 30,
-                            fontWeight: FontWeight.bold
-                        ),
+                            fontWeight: FontWeight.bold),
                       ),
                       Text(
                         'Registered Users',
@@ -65,8 +79,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                         style: TextStyle(
                             color: Colors.red[800],
                             fontSize: 30,
-                            fontWeight: FontWeight.bold
-                        ),
+                            fontWeight: FontWeight.bold),
                       ),
                       Text(
                         'Donors Available',
@@ -87,8 +100,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                         style: TextStyle(
                             color: Colors.red[800],
                             fontSize: 30,
-                            fontWeight: FontWeight.bold
-                        ),
+                            fontWeight: FontWeight.bold),
                       ),
                       Text(
                         'Pending Requests',
@@ -109,8 +121,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 style: TextStyle(
                     color: Colors.red[800],
                     fontWeight: FontWeight.bold,
-                    fontSize: 20
-                ),
+                    fontSize: 20),
               ),
             ),
             Divider(
@@ -119,21 +130,19 @@ class _HomeWidgetState extends State<HomeWidget> {
             ListView.builder(
               shrinkWrap: true,
               itemCount: display.length,
-              itemBuilder: (context, index)=>Padding(
+              itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ListTile(
                   onTap: () {},
                   shape: RoundedRectangleBorder(
                       side: const BorderSide(color: Colors.black, width: 1),
-                      borderRadius: BorderRadius.circular(5)
-                  ),
+                      borderRadius: BorderRadius.circular(5)),
                   title: Text(
                     'Required ${display[index].bld_type} Blood Urgently',
                     style: TextStyle(
                         color: Colors.red[800],
                         fontSize: 15,
-                        fontWeight: FontWeight.bold
-                    ),
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -145,11 +154,12 @@ class _HomeWidgetState extends State<HomeWidget> {
   }
 }
 
-
-class UserRequest{
+class UserRequest {
   String name, location, bld_type, contact;
 
-  UserRequest({required this.name, required this.location, required this.bld_type, required this.contact});
+  UserRequest(
+      {required this.name,
+      required this.location,
+      required this.bld_type,
+      required this.contact});
 }
-
-
