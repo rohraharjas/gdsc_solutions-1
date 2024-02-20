@@ -3,6 +3,8 @@ import 'package:gdsc_solutions/Screens/authenticate/forgotpassword.dart';
 import 'package:gdsc_solutions/Screens/templates.dart';
 import 'package:gdsc_solutions/main.dart';
 
+import 'blodonation_checklst.dart';
+
 class SignInPage2 extends StatelessWidget {
   const SignInPage2({Key? key}) : super(key: key);
 
@@ -240,13 +242,13 @@ class __FormContentState extends State<_FormContent> {
             _gap(),
             AppTextButton(
               text: "Submit",
-              height: 100.0,
-              width: double.infinity,
+              height: 50.0, // Adjust the height as per your design
+              width: double.infinity, // Takes the full width of the parent container
               onpressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Home(currentIndex: 2),
+                    builder: (context) => Home(currentIndex: 2), // Navigate to the BloodDonationChecklist screen
                   ),
                 );
               },

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 class UserProfilePage extends StatelessWidget {
-  // Dummy user data (replace with actual user data)
   final String username;
   final String name;
   final double weight;
-  final String gender; // "Other" for testing transgender
+  final String gender;
   final int height;
   final int age;
 
@@ -19,32 +18,38 @@ class UserProfilePage extends StatelessWidget {
     required this.age,
   });
 
-  Widget _gap() => const SizedBox(
-        height: 10,
-      );
+  Widget _gap() => const SizedBox(height: 10);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[100], // Light background to contrast with red theme
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Center(
+                child: CircleAvatar(
+                  radius: 50, // Profile picture size
+                  backgroundImage: NetworkImage('assets/images/doctor1.jpg'), // Placeholder image
+                  backgroundColor: Colors.red.shade100, // Light red background for the avatar
+                ),
+              ),
+              const SizedBox(height: 20),
               const Text(
                 "User Profile",
                 style: TextStyle(
-                  color: Colors.redAccent,
+                  color: Colors.redAccent, // Maintain red theme for the header
                   fontWeight: FontWeight.bold,
-                  fontSize: 25,
+                  fontSize: 28, // Increased font size for prominence
                 ),
               ),
               _gap(),
               buildProfileCard(
                 'Username',
                 username,
-                // Icons.alternate_email_rounded,
                 Icons.attribution_rounded,
               ),
               _gap(),
@@ -86,13 +91,14 @@ class UserProfilePage extends StatelessWidget {
 
   Widget buildProfileCard(String title, String subtitle, IconData iconData) {
     return Card(
-      elevation: 3,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      elevation: 5, // Slight elevation for depth
+      shadowColor: Colors.red.shade100, // Soft red shadow for depth
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)), // Rounded corners for a modern look
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
         child: Row(
           children: [
-            Icon(iconData, size: 40),
+            Icon(iconData, size: 40, color: Colors.redAccent), // Icon with red accent
             const SizedBox(width: 20),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,10 +108,14 @@ class UserProfilePage extends StatelessWidget {
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
+                    color: Colors.redAccent, // Red text for title
                   ),
                 ),
                 const SizedBox(height: 5),
-                Text(subtitle),
+                Text(
+                  subtitle,
+                  style: TextStyle(color: Colors.black.withOpacity(0.6)), // Subdued color for the subtitle
+                ),
               ],
             ),
           ],
@@ -115,12 +125,13 @@ class UserProfilePage extends StatelessWidget {
   }
 
   IconData _getGenderIcon(String gender) {
+    // Choose icon based on gender and maintain red theme
     if (gender == 'Male') {
-      return Icons.male;
+      return Icons.male; // Consider color customization if needed
     } else if (gender == 'Female') {
-      return Icons.female;
+      return Icons.female; // Consider color customization if needed
     } else {
-      return Icons.transgender_outlined;
+      return Icons.transgender; // Consider color customization if needed
     }
   }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class Health extends StatelessWidget {
-  const Health({Key? key});
+  const Health({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class Health extends StatelessWidget {
                 fontSize: 20,
               ),
               tabs: const [
-                Tab(text: 'Did you know?'),
+                Tab(text: 'Health Resources'),
                 Tab(text: 'Doctors & Dieticians'),
               ],
             ),
@@ -35,7 +36,7 @@ class Health extends StatelessWidget {
                   DoctorsAndDieticiansSection(),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -44,27 +45,36 @@ class Health extends StatelessWidget {
 }
 
 class DidYouKnowSection extends StatelessWidget {
-  const DidYouKnowSection({Key? key});
+  const DidYouKnowSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final List<String> articlesImgList = [
+      'assets/images/img1.jpg',
+      'assets/images/img2.png',
+      'assets/images/img3.jpg',
+    ];
+
+    final List<String> videosImgList = [
+      'assets/images/doctor1.jpg',
+      'assets/images/doctor1.jpg',
+      'assets/images/doctor1.jpg',
+    ];
+
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.all(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            //const SizedBox(height: 12,),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
-                'SwifTip for the Day',
+                'Did You Know',
                 style: TextStyle(
                   color: Colors.red.shade800,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  //decoration: TextDecoration.underline,
-                  //decorationColor: Colors.red[800]
                 ),
               ),
             ),
@@ -76,15 +86,10 @@ class DidYouKnowSection extends StatelessWidget {
                   color: Colors.black54,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-
-                  //decoration: TextDecoration.underline,
-                  //decorationColor: Colors.red[800]
                 ),
               ),
-
             ),
-
-            Padding( //articles
+            Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
                 'Articles worth a read!',
@@ -92,16 +97,22 @@ class DidYouKnowSection extends StatelessWidget {
                   color: Colors.red[800],
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  //decoration: TextDecoration.underline,
-                  //decorationColor: Colors.red[800]
                 ),
               ),
             ),
-
-            //carousel of articles
-
-
-            Padding( //videos
+            CarouselSlider(
+              options: CarouselOptions(
+                aspectRatio: 16/9,
+                enlargeCenterPage: true,
+                autoPlay: true,
+              ),
+              items: articlesImgList.map((item) => Container(
+                child: Center(
+                  child: Image.asset(item, fit: BoxFit.cover, width: 1000),
+                ),
+              )).toList(),
+            ),
+            Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
                 'Understand through videos!',
@@ -109,10 +120,20 @@ class DidYouKnowSection extends StatelessWidget {
                   color: Colors.red[800],
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  //decoration: TextDecoration.underline,
-                  //decorationColor: Colors.red[800]
                 ),
               ),
+            ),
+            CarouselSlider(
+              options: CarouselOptions(
+                aspectRatio: 16/9,
+                enlargeCenterPage: true,
+                autoPlay: true,
+              ),
+              items: videosImgList.map((item) => Container(
+                child: Center(
+                  child: Image.asset(item, fit: BoxFit.cover, width: 1000),
+                ),
+              )).toList(),
             ),
           ],
         ),
@@ -122,7 +143,7 @@ class DidYouKnowSection extends StatelessWidget {
 }
 
 class DoctorsAndDieticiansSection extends StatelessWidget {
-  const DoctorsAndDieticiansSection({Key? key});
+  const DoctorsAndDieticiansSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

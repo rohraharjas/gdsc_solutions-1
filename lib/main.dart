@@ -11,6 +11,10 @@ import 'package:gdsc_solutions/Screens/wrapper.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:gdsc_solutions/Screens/authenticate/signin.dart';
 // import 'firebase_options.dart';
+import 'package:gdsc_solutions/Screens/userprofile.dart';
+
+import 'Screens/Organisations/CampSlots.dart';
+import 'Screens/Organisations/homeOrg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,19 +47,19 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final screens = [
-    Faq(),
-    Health(),
+  final screensUser = [
+    const Faq(),
+    const Health(),
     const HomeWidget(),
     const EventsPages(),
-    Profile()
+    Profile(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(context: context),
       drawer: const AppDrawer(),
-      body: screens[widget.currentIndex],
+      body: screensUser[widget.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: false,
         showUnselectedLabels: false,
@@ -70,15 +74,15 @@ class _HomeState extends State<Home> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.help,
-              size: 28,
+              Icons.help_rounded,
+              size: 32,
             ),
             label: 'Help',
           ),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.medical_services,
-                size: 28,
+                Icons.health_and_safety,
+                size: 32,
               ),
               label: 'Create'),
           BottomNavigationBarItem(
@@ -89,14 +93,72 @@ class _HomeState extends State<Home> {
               label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.list,
-                size: 28,
+                Icons.add_business_rounded,
+                size: 32,
               ),
               label: 'List'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.person,
-                size: 28,
+                size: 32,
+              ),
+              label: 'Profile')
+        ],
+      ),
+    );
+  }
+}
+
+class HomeOrganisation extends StatefulWidget {
+  int currentOrgIndex;
+  HomeOrganisation({super.key,required this.currentOrgIndex});
+
+  @override
+  State<HomeOrganisation> createState() => _HomeOrganisationState();
+}
+
+class _HomeOrganisationState extends State<HomeOrganisation> {
+
+  final screensOrg = [
+    const CampSlots(),
+    const HomeOrgWidget(),
+    Profile(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: MyAppBar(context: context),
+      drawer: const AppDrawer(),
+      body: screensOrg[widget.currentOrgIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.grey[100],
+        selectedItemColor: Colors.red[800],
+        unselectedItemColor: Colors.grey[700],
+        currentIndex: widget.currentOrgIndex,
+        onTap: (index) => setState(() {
+          widget.currentOrgIndex = index;
+        }),
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.add_business_rounded,
+                size: 35,
+              ),
+              label: 'Create'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.water_drop,
+                size: 70,
+              ),
+              label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                size: 35,
               ),
               label: 'Profile')
         ],
