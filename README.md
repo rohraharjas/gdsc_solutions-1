@@ -12,9 +12,14 @@ Product Demo:
 - Access to resources to improve your general health(facts, videos, articles, etc.)
 - General FAQs and information regarding the blood donation process to address stigmas, misinformation and create awareness about the need and benefits of blood donation
 
+## Preview of The Project:
+
+![](https://github.com/rohraharjas/gdsc_solutions-1/blob/main/healthtips.gif)
+![](https://github.com/rohraharjas/gdsc_solutions-1/blob/main/campcards.gif)
+![](https://github.com/rohraharjas/gdsc_solutions-1/blob/main/healthtips.gif)
+
 ## Future Scope:
 
 - Multilingual Support for Regional Accessibility
 - Recognition and Verification of doctor reports through Image Processing to streamline the registration and health update process
 - Connecting users to medical professionals via the app in order to address health related issues
-
