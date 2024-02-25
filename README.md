@@ -16,7 +16,7 @@ Product Demo:
 
 ![Home Page](https://github.com/rohraharjas/gdsc_solutions-1/blob/main/homepage.gif)<br><br>Home Page<br><br>
 ![Camp Cards](https://github.com/rohraharjas/gdsc_solutions-1/blob/main/campcards.gif)<br><br>Camp Cards<br><br>
-![Health Tips](https://github.com/rohraharjas/gdsc_solutions-1/blob/main/healthtips.gif)<br><br><Health Tips>
+![Health Tips](https://github.com/rohraharjas/gdsc_solutions-1/blob/main/healthtips.gif)<br><br><Health>
 
 ## Future Scope:
 
