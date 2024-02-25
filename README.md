@@ -2,7 +2,7 @@
 
 BloodBridge aspires to connect blood donors and relevant medical organizations, while also creating a society so robust that demands for blood unit arise only in cases of emergencies. BloodBridge allows you to register for upcoming blood donation drive alongside regular eligibility checks, while also providing you with resources to improve your general health and well being.
 
-Product Demo: 
+Product Demo: https://youtu.be/-UKN5p6lGdM
 
 ## Features of The App:
 
