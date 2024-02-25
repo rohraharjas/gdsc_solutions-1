@@ -1,16 +1,20 @@
-# gdsc_solutions
+# BloodBridge: Bridging the Gap Between Blood Donors and Patients Seeking Transfusion
 
-A new Flutter project.
+BloodBridge aspires to connect blood donors and relevant medical organizations, while also creating a society so robust that demands for blood unit arise only in cases of emergencies. BloodBridge allows you to register for upcoming blood donation drive alongside regular eligibility checks, while also providing you with resources to improve your general health and well being.
 
-## Getting Started
+Product Demo: 
 
-This project is a starting point for a Flutter application.
+## Features of The App:
 
-A few resources to get you started if this is your first Flutter project:
+- Locate and register for upcoming Blood Donation Camps
+- Regular Health and Eligibility Updates
+- Create Requests for Blood in cases of emergencies
+- Access to resources to improve your general health(facts, videos, articles, etc.)
+- General FAQs and information regarding the blood donation process to address stigmas, misinformation and create awareness about the need and benefits of blood donation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Future Scope:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Multilingual Support for Regional Accessibility
+- Recognition and Verification of doctor reports through Image Processing to streamline the registration and health update process
+- Connecting users to medical professionals via the app in order to address health related issues
+
