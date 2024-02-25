@@ -18,6 +18,25 @@ Product Demo: https://youtu.be/-UKN5p6lGdM
 ![Camp Cards](https://github.com/rohraharjas/gdsc_solutions-1/blob/main/campcards.gif)<br><br>Camp Cards<br><br>
 ![Health Tips](https://github.com/rohraharjas/gdsc_solutions-1/blob/main/healthtips.gif)<br><br><Health>
 
+## Running The App:
+
+You can Download the BloodBridge App directly from this Github Repository.
+
+### Prerequisites:
+
+Before you start make sure you have the following installed on your system:
+- Flutter SDK
+- Android Studio or VS Code
+- Dart Extensions for the IDE
+- Android Emulator or Physical Device to run the app
+
+### Installation:
+
+1. Clone the BloodBridge Project from the Github Repository: https://github.com/rohraharjas/gdsc_solutions-1
+2. Open the Project in your respective IDE
+3. Run the flutter doctor command for the project. This will ensure everything is configured correctly
+4. Open the 'main.dart' file and run the project. This will launch the project on your android emulator or physical device
+
 ## Future Scope:
 
 - Multilingual Support for Regional Accessibility
