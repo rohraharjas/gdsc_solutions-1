@@ -50,7 +50,7 @@ class _HomeOrgState extends State<HomeOrgWidget> {
                         ),
                       ),
                       Text(
-                        'Registered Organisations',
+                        'In-app Organisations',
                         style: TextStyle(
                           color: Colors.grey[800],
                           fontSize: 12,

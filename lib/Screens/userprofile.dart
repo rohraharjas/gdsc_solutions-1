@@ -34,14 +34,14 @@ class UserProfilePage extends StatelessWidget {
                 child: CircleAvatar(
                   radius: 50, // Profile picture size
                   backgroundImage: NetworkImage('assets/images/doctor1.jpg'), // Placeholder image
-                  backgroundColor: Colors.red.shade100, // Light red background for the avatar
+                  backgroundColor: Colors.red.shade200, // Light red background for the avatar
                 ),
               ),
               const SizedBox(height: 20),
-              const Text(
+              Text(
                 "User Profile",
                 style: TextStyle(
-                  color: Colors.redAccent, // Maintain red theme for the header
+                  color: Colors.red.shade800, // Maintain red theme for the header
                   fontWeight: FontWeight.bold,
                   fontSize: 28, // Increased font size for prominence
                 ),
@@ -95,20 +95,20 @@ class UserProfilePage extends StatelessWidget {
       shadowColor: Colors.red.shade100, // Soft red shadow for depth
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)), // Rounded corners for a modern look
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
         child: Row(
           children: [
-            Icon(iconData, size: 40, color: Colors.redAccent), // Icon with red accent
+            Icon(iconData, size: 40, color: Colors.red.shade800), // Icon with red accent
             const SizedBox(width: 20),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
-                    color: Colors.redAccent, // Red text for title
+                    color: Colors.red.shade800, // Red text for title
                   ),
                 ),
                 const SizedBox(height: 5),

@@ -72,6 +72,19 @@ flutter:
     - assets/images/img3.jpg
     - assets/images/img2.png
     - assets/images/img1.jpg
+    - assets/images/bloodbank2.jpg
+    - assets/images/video1.jpg
+    - assets/images/video2.jpg
+    - assets/images/video3.jpg
+    - assets/images/doc1.jpg
+    - assets/images/doc2 female.jpg
+    - assets/images/dietician1.jpg
+    - assets/images/jankalyanBank.jpeg
+    - assets/images/bloodbank3.jpg
+    - assets/images/article3.jpeg
+    - assets/images/article2.jpeg
+    - assets/images/article1.jpeg
+    - assets/images/locatecamps.PNG
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

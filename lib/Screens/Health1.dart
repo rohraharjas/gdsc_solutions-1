@@ -46,19 +46,18 @@ class Health extends StatelessWidget {
 
 class DidYouKnowSection extends StatelessWidget {
   const DidYouKnowSection({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final List<String> articlesImgList = [
-      'assets/images/img1.jpg',
-      'assets/images/img2.png',
-      'assets/images/img3.jpg',
+      'assets/images/article3.jpeg',
+      'assets/images/article1.jpeg',
+      'assets/images/article2.jpeg',
     ];
 
     final List<String> videosImgList = [
-      'assets/images/doctor1.jpg',
-      'assets/images/doctor1.jpg',
-      'assets/images/doctor1.jpg',
+      'assets/images/video1.jpg',
+      'assets/images/video2.jpg',
+      'assets/images/video3.jpg',
     ];
 
     return SingleChildScrollView(
@@ -152,19 +151,19 @@ class DoctorsAndDieticiansSection extends StatelessWidget {
       child: Column(
         children: [
           DoctorCard(
-            name: 'Dr. John Doe',
-            specialty: 'Cardiologist',
-            imageUrl: 'assets/images/doctor1.jpg',
+            name: 'Dr. Manas Mehta',
+            specialty: 'General Physician',
+            imageUrl: 'assets/images/doc1.jpg',
           ),
           DoctorCard(
             name: 'Dr. Jane Smith',
             specialty: 'Pediatrician',
-            imageUrl: 'assets/images/doctor2.jpg',
+            imageUrl: 'assets/images/doc2 female.jpg',
           ),
           DoctorCard(
-            name: 'Dr. Michael Johnson',
-            specialty: 'Dietician',
-            imageUrl: 'assets/images/doctor3.jpg',
+            name: 'Smita Sharma',
+            specialty: 'Certified Dietician',
+            imageUrl: 'assets/images/dietician1.jpg',
           ),
         ],
       ),

@@ -89,6 +89,9 @@ class Location extends StatelessWidget {
             ),
           ),
         ),
+        Expanded( // Use Expanded to make the image take up all remaining space
+          child: Image.asset('assets/images/locatecamps.PNG', fit: BoxFit.cover), // Load the image from assets
+        ),
       ],
     );
   }

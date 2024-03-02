@@ -10,7 +10,7 @@ class MedRecordsPage extends StatefulWidget {
 
 class _MedRecordsState extends State<MedRecordsPage> {
   var record = MedicalRecords(
-    gender: 'Male',
+    gender: 'Female',
     bld_type: 'O+ve',
     height: 1.65,
     weight: 61,

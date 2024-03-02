@@ -23,15 +23,125 @@ class _HomeWidgetState extends State<HomeWidget> {
   @override
   Widget build(BuildContext context) {
     final List<String> imgList = [
-      'assets/images/img1.jpg',
-      'assets/images/img2.png',
-      'assets/images/img3.jpg',
+      'assets/images/jankalyanBank.jpeg',
+      'assets/images/bloodbank2.jpg',
+      'assets/images/bloodbank3.jpg',
     ];
 
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          // Existing showDialog code...
+          await showDialog<void>(
+              context: context,
+              builder: (context) => Dialog(
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: <Widget>[
+                    Positioned(
+                      right: -40,
+                      top: -40,
+                      child: InkResponse(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: const CircleAvatar(
+                          backgroundColor: Colors.red,
+                          child: Icon(Icons.close, color: Colors.white,),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(60,8,0,2),
+                      child: Text(
+                        'Create A New Request',
+                        style: TextStyle(
+                          color: Colors.red[800],
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          decoration: TextDecoration.underline,
+                          decorationColor: Colors.red[800],
+                        ),
+                      ),
+                    ),
+                    Form(
+                      key: _formKey,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(4,16,4,4),
+                            child: TextFormField(
+                              controller: bld_controller,
+                              decoration: const InputDecoration(
+                                labelText: 'Blood Type Required: ',
+                                labelStyle: TextStyle(
+                                    fontSize: 10
+                                ),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.redAccent),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.redAccent),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(4),
+                            child: TextFormField(
+                              controller: loc_controller,
+                              decoration: const InputDecoration(
+                                labelText: 'Location: ',
+                                labelStyle: TextStyle(
+                                    fontSize: 10
+                                ),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.redAccent),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.redAccent),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(4),
+                            child: TextFormField(
+                              controller: contact_controller,
+                              decoration: const InputDecoration(
+                                labelText: 'Contact: ',
+                                labelStyle: TextStyle(
+                                    fontSize: 10
+                                ),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.redAccent),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.redAccent),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: ElevatedButton(
+                              child: const Text('Submit',style: TextStyle(color: Colors.redAccent),),
+                              onPressed: () {
+                                if (_formKey.currentState!.validate()) {
+                                  setState(() {
+                                    display.add(UserRequest(location: loc_controller.text, bld_type: bld_controller.text, contact: contact_controller.text));
+                                    Navigator.pop(context);
+                                  });
+                                }
+                              },
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ));
         },
         backgroundColor: Colors.white,
         child: Icon(
@@ -112,8 +222,6 @@ class _HomeWidgetState extends State<HomeWidget> {
                 )
               ],
             ),
-
-            // CarouselSlider added here
             CarouselSlider(
               options: CarouselOptions(
                 autoPlay: true,
@@ -124,7 +232,6 @@ class _HomeWidgetState extends State<HomeWidget> {
                 child: Image.asset(item, fit: BoxFit.cover, width: 1000),
               )).toList(),
             ),
-
             Padding(
               padding: const EdgeInsets.fromLTRB(19, 8, 0, 2),
               child: Text(

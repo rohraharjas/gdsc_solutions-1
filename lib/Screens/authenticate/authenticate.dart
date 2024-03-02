@@ -56,9 +56,10 @@ class _Logo extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          const SizedBox(height: 40),
           Image.asset(
             'assets/images/logo.png',
-            width: isSmallScreen ? 100 : 200,
+            width: isSmallScreen ? 150 : 200,
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -248,7 +249,7 @@ class __FormContentState extends State<_FormContent> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Home(currentIndex: 2), // Navigate to the BloodDonationChecklist screen
+                    builder: (context) => HomeOrganisation(currentOrgIndex: 1), // Navigate to the BloodDonationChecklist screen
                   ),
                 );
               },
